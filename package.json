@@ -1,0 +1,17 @@
+{
+  "name": "j5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bluebird": "^3.5.2",
+    "johnny-five": "^1.0.0",
+    "openweather-apis": "^3.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
