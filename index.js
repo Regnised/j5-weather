@@ -12,16 +12,10 @@ board.on("ready", function () {
     });
 
 
-    weather.getAllWeather()
-        .then((JSONObj) => {
-            lcd.print("Smila," + JSONObj.weather[0].main + "T:" + JSONObj.main.temp);
-            lcd.cursor(1, 0).print("Wind:"+ JSONObj.wind.speed + "P:"+JSONObj.main.pressure + "H:"+ JSONObj.main.humidity);
-        })
-                // lcd.print("Smila," + JSONObj.weather[0].main + "T:" + JSONObj.main.temp);
-                // lcd.cursor(1, 0).print("Wind:"+ JSONObj.wind.speed + "P:"+JSONObj.main.pressure + "H:"+ JSONObj.main.humidity);
-
-
-    console.log(smila());
+    weather.getAllWeather((err , JSONObj) => {
+        lcd.print("Smila," + JSONObj.weather[0].main + "T:" + JSONObj.main.temp);
+        lcd.cursor(1, 0).print("Wind:"+ JSONObj.wind.speed + "P:"+JSONObj.main.pressure + "H:"+ JSONObj.main.humidity);
+    });
 
     http.createServer((req, res) => {
         res.setHeader('Content-Type', 'text/html');
